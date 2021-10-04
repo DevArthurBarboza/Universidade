@@ -14,32 +14,34 @@ public class Principal {
         System.out.println("Iniciando sistema...");
 
         while (op != 9){
-            System.out.println("1-Incluir professor");
+            System.out.println("1-Cadastrar professor");
             System.out.println("2-Listar Professores");
-            System.out.println("3-Apresentar dados dos professores");
+            System.out.println("3-Apresentar todos os dados dos professores");
+            System.out.println("4-Consultar professor");
+            System.out.println("5-Testando instancia");
             System.out.println("9-Fim");
             op = input.nextInt(); input.nextLine();
 
             switch(op){
                 case 1:
-                    System.out.println("Informe o tipo de professor\n1-Horista\n2-Dedicado");
-                    int tipo = input.nextInt(); input.nextLine();
                     System.out.println("Informe o nome: ");
                     String nome = input.nextLine();
                     System.out.println("Informe a matricula: ");
                     String matricula = input.nextLine();
                     System.out.println("Informe o salário: ");
                     double salario = input.nextDouble();
+                    System.out.println("Informe o tipo de professor\n1-Horista\n2-Dedicado");
+                    int tipo = input.nextInt(); input.nextLine();
                     switch (tipo){
                         case 1:
                             System.out.println("Informe as horas trabalhadas");
-                            double horas = input.nextDouble();
+                            double horas = input.nextDouble(); input.nextLine();
                             ctrl.incluirProfessor(new ProfessorHorista(nome,matricula,salario,horas));
                             break;
                         case 2:
                             System.out.println("Informe a quantidade de licenças prêmio");
-                            int licenca = input.nextInt();
-                            ctrl.incluirProfessor(new ProfessorDE(nome,matricula,salario,licenca) );
+                            int licenca = input.nextInt(); input.nextLine();
+                            ctrl.incluirProfessor(new ProfessorDE(nome,matricula,salario,licenca));
                             break;
                     }
 
@@ -49,6 +51,16 @@ public class Principal {
                     break;
                 case 3:
                     System.out.println(ctrl.mostraDados());
+                    break;
+                case 4:
+                    System.out.println("Informe a matrícula");
+                    matricula = input.nextLine();
+                    System.out.println(ctrl.consultaProf(matricula));
+                    break;
+                case 5:
+                    System.out.println("Informe a matricula");
+                    matricula = input.nextLine();
+                    System.out.println(ctrl.testeIntancia(matricula));
                     break;
                 case 9:
                     System.out.println("Encerrando sistema...");
