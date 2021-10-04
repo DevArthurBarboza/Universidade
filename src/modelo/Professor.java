@@ -1,10 +1,16 @@
-public class Professor {
-    private int salario;
-    private String nome;
-    private String matricula;
+package modelo;
 
-    public int getSalario(){
+public class Professor {
+    protected double salario;
+    protected String nome;
+    protected String matricula;
+
+    public double getSalario(){
         return this.salario;
+    }
+
+    public String getDados(){
+        return "Nome: " + getNome() + "\nSalário: " + getSalario() + "\nMatrícula:" + getMatricula();
     }
 
     public void setSalario(int novoSalario){
@@ -27,7 +33,7 @@ public class Professor {
         return this.matricula;
     }
 
-    public Professor(String nome, String matricula, int salario){
+    public Professor(String nome, String matricula, double salario){
         this.nome = nome;
         this.matricula = matricula;
         this.salario = salario;
