@@ -18,7 +18,6 @@ public class Principal {
             System.out.println("2-Listar Professores");
             System.out.println("3-Apresentar todos os dados dos professores");
             System.out.println("4-Consultar professor");
-            System.out.println("5-Testando instancia");
             System.out.println("9-Fim");
             op = input.nextInt(); input.nextLine();
 
@@ -56,11 +55,6 @@ public class Principal {
                     System.out.println("Informe a matrícula");
                     matricula = input.nextLine();
                     System.out.println(ctrl.consultaProf(matricula));
-                    break;
-                case 5:
-                    System.out.println("Informe a matricula");
-                    matricula = input.nextLine();
-                    System.out.println(ctrl.testeIntancia(matricula));
                     break;
                 case 9:
                     System.out.println("Encerrando sistema...");

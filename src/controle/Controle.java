@@ -50,33 +50,10 @@ public class Controle {
                 break;
             }
         }
-
         if (achouProf){
             return saida;
         } else{
             return ("Não achou");
         }
-
     }
-
-    public String testeIntancia(String matricula){
-        Professor aux;
-        boolean isTrue = false;
-        for (int i=0; i <listaProfessor.size();i++){
-            aux = listaProfessor.get(i);
-            if ((aux.getMatricula().equals(matricula)) && (aux instanceof ProfessorDE)){
-                    isTrue = true;
-            } else {
-                isTrue = false;
-            }
-        }
-
-        if(isTrue){
-            return "verdadeiro";
-        } else {
-            return null;
-        }
-    }
-
-
 }
